@@ -1,6 +1,6 @@
 const App = () => {
   return (
-    <div>Make a Mobile app basedaq on React Native or Flutter</div>
+    <div>Make afdFsfd Mobile app basedaq on React Native or Flutter</div>
   )
 }
 
