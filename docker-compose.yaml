@@ -1,17 +1,22 @@
 version: "3.9"
 
 services:
+
   backend:
-    image: utkarsh9246546/backend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - "3000:8080" # Maps EC2 Port 3000 to Container Port 8080
+      - "3000:8080"
     container_name: backend_container
     restart: always
 
   frontend:
-    image: utkarsh9246546/frontend:latest
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     ports:
-      - "5000:5000" # Maps EC2 Port 5000 to Container Port 5000
+      - "5000:5000"
     container_name: frontend_container
     depends_on:
       - backend
