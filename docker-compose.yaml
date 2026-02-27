@@ -1,22 +1,17 @@
 version: "3.9"
 
 services:
-
   backend:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: utkarsh9246546/backend:latest
     ports:
-      - "3000:3000"
+      - "3000:3000" # Host 3000 -> Container 3000 (API)
     container_name: backend_container
     restart: always
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: utkarsh9246546/frontend:latest
     ports:
-      - "5000:5000"
+      - "80:5000"   # Host 80 -> Container 5000 (UI)
     container_name: frontend_container
     depends_on:
       - backend
