@@ -62,7 +62,7 @@ jobs:
         run: docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend:latest ./frontend
 
       # Push Images
-      - name: Push Backend Image
+      - name: Push Backend Image done
         run: docker push ${{ secrets.DOCKER_USERNAME }}/backend:latest
 
       - name: Push Frontend Image
